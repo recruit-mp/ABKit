@@ -1,0 +1,18 @@
+### https://raw.github.com/github/gitignore/c6e6d99b65bcdfc8f248f9545fc9ae43d141d8bd/Global/xcode.gitignore
+
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.xcuserstate
+
+
