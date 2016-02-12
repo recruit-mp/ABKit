@@ -1,5 +1,5 @@
 //
-//  ABKitSpec.swift
+//  SplitTestSpec.swift
 //  ABKit
 //
 //  Created by Masato OSHIMA on 2016/02/12.
@@ -10,21 +10,21 @@ import Quick
 import Nimble
 @testable import ABKit
 
-class ABKitSpec: QuickSpec {
+class SplitTestSpec: QuickSpec {
     
     override func spec() {
         
-        describe("ABKit") {
+        describe("SplitTest") {
             
-            context("SprintTest Initialization") {
+            context("Initialization") {
                 
-                it("create SplitTest by convinience") {
+                it("creates by convinience") {
                     let defaultVersion = Version(name: "name", behavior: {})
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion)
                     expect(splitTest.versionWeights).to(beEmpty())
                 }
                 
-                it("create SplitTest") {
+                it("creates by specified the RandomNumberRepository") {
                     let randomNumberRepository = TestRandomNumberRepository()
                     let defaultVersion = Version(name: "name", behavior: {})
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion, randomNumberRepository: randomNumberRepository)
@@ -32,7 +32,7 @@ class ABKitSpec: QuickSpec {
                 }
             }
             
-            context("SprintTest Add Version") {
+            context("Add Version") {
                 
                 it("creates version weights") {
                     let defaultVersion = Version(name: "name", behavior: {})
@@ -51,7 +51,7 @@ class ABKitSpec: QuickSpec {
                 }
             }
             
-            context("SprintTest Run") {
+            context("Run") {
                 
                 it("calcurates version weights") {
                     let defaultVersion = Version(name: "name", behavior: {})
