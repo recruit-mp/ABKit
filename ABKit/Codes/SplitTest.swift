@@ -9,7 +9,7 @@
 import Foundation
 
 class SplitTest {
-    var versions: [Version] = []
+    var versionWeights: [VersionWeight] = []
     
     private let name: String
     private let defaultVersion: Version
@@ -19,8 +19,6 @@ class SplitTest {
         self.name = name
         self.defaultVersion = defaultVersion
         self.randomNumberRepository = randomNumberRepository
-        
-        addVersion(defaultVersion)
     }
     
     convenience init(name: String, defaultVersion: Version) {
@@ -28,33 +26,31 @@ class SplitTest {
         self.init(name: name, defaultVersion: defaultVersion, randomNumberRepository: defaultRepository)
     }
     
-    func addVersion(version: Version) {
-        versions.append(version)
+    func addVersion(version: Version, weight: Float) {
+        let versionWeight = VersionWeight(version: version, weight: Int(weight * 100))
+        versionWeights.append(versionWeight)
     }
     
     func run() {
+        calculateWeightRanges()
         let randomNumber = randomNumberRepository.ab_getRandomNumberWithKey("ABKit-\(name)")
-        let versionRanges = buildVersionRanges()
-        let version = selectVersionByNumber(randomNumber, versionRanges: versionRanges)
+        let version = selectVersionByRandomNumber(randomNumber)
         version.behavior()
     }
     
-    private func buildVersionRanges() -> [VersionRange] {
-        let rangeLength = 100 / versions.count
-        
-        var versionRanges: [VersionRange] = []
-        for (index, version) in versions.enumerate() {
-            let min = rangeLength * index
-            let max = rangeLength * (index + 1)
-            let versionRange = VersionRange(range: min..<max, version: version)
-            versionRanges.append(versionRange)
+    private func calculateWeightRanges() {
+        var weightIndex = 0
+        for (index, versionWeight) in versionWeights.enumerate() {
+            let min = weightIndex
+            let max = weightIndex + versionWeight.weight
+            versionWeights[index].weightRange = min..<max
+            
+            weightIndex = versionWeight.weight
         }
-        
-        return versionRanges
     }
     
-    private func selectVersionByNumber(number: Int, versionRanges: [VersionRange]) -> Version {
-        let versions = versionRanges.filter { $0.range.contains(number) }.map { $0.version }
+    private func selectVersionByRandomNumber(randomNumber: Int) -> Version {
+        let versions = versionWeights.filter { $0.contains(randomNumber) }.map { $0.version }
         return versions.first ?? defaultVersion
     }
 }
