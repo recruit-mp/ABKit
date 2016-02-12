@@ -32,7 +32,7 @@ $ pod install
 ```swift
 let defaultVersion = Version(name: "a") { print("Pattern A") }
 
-let test = SplitTest(defaultVersion: defaultVersion)
+let test = SplitTest(name: "Sample A/B test", defaultVersion: defaultVersion)
 
 let b = Version(name: "b") { print("Pattern B") }
 test.addVersion(b, weight: 0.5)
@@ -45,7 +45,7 @@ test.run() // A(Default Version) = 50%, B = 50%
 ```swift
 let defaultVersion = Version(name: "a") { print("Pattern A") }
 
-let test = SplitTest(defaultVersion: defaultVersion)
+let test = SplitTest(name: "Sample split test", defaultVersion: defaultVersion)
 
 let b = Version(name: "b") { print("Pattern B") }
 test.addVersion(b, weight: 0.2)
