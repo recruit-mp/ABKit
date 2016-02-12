@@ -26,8 +26,7 @@ class ABKitSpec: QuickSpec {
                 let randomNumberRepository = TestRandomNumberRepository()
                 let defaultVersion = Version(name: "name", behavior: {})
                 let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion, randomNumberRepository: randomNumberRepository)
-                ex
-                pect(splitTest.versionWeights).to(beEmpty())
+                expect(splitTest.versionWeights).to(beEmpty())
             }
         }
     }
