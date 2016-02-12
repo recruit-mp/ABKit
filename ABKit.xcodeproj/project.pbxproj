@@ -10,12 +10,12 @@
 		38EF8B652AF26F2465387A33 /* Pods_ABKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E564495A2765E422B3B15D /* Pods_ABKitTests.framework */; };
 		3D10CF2B1C6DA4E1002A2016 /* ABKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D10CF2A1C6DA4E1002A2016 /* ABKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D10CF321C6DA4E1002A2016 /* ABKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D10CF271C6DA4E1002A2016 /* ABKit.framework */; };
+		3DBDD6751C6DBFA2007C5181 /* VersionWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBDD6741C6DBFA2007C5181 /* VersionWeight.swift */; };
 		3DD4E6651C6DA9F30089473B /* SplitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E6641C6DA9F30089473B /* SplitTest.swift */; };
 		3DD4E6671C6DAA190089473B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E6661C6DAA190089473B /* Version.swift */; };
-		3DD4E6691C6DAA2F0089473B /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E6681C6DAA2F0089473B /* VersionRange.swift */; };
-		53DC27A11C6DAED20040005E /* ABKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC27A01C6DAED20040005E /* ABKitSpec.swift */; };
 		3DD4E66B1C6DAD410089473B /* RandomNumberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */; };
 		3DD4E66D1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E66C1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift */; };
+		53DC27A11C6DAED20040005E /* ABKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC27A01C6DAED20040005E /* ABKitSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,13 @@
 		3D10CF2C1C6DA4E1002A2016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D10CF311C6DA4E1002A2016 /* ABKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D10CF381C6DA4E1002A2016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DBDD6741C6DBFA2007C5181 /* VersionWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionWeight.swift; sourceTree = "<group>"; };
 		3DD4E6641C6DA9F30089473B /* SplitTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitTest.swift; sourceTree = "<group>"; };
 		3DD4E6661C6DAA190089473B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		3DD4E6681C6DAA2F0089473B /* VersionRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
-		4BFA0C4A40C2D2B016305DBC /* Pods-ABKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABKitTests/Pods-ABKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		53DC27A01C6DAED20040005E /* ABKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABKitSpec.swift; sourceTree = "<group>"; };
 		3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberRepository.swift; sourceTree = "<group>"; };
 		3DD4E66C1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+RandomNumberRepository.swift"; sourceTree = "<group>"; };
+		4BFA0C4A40C2D2B016305DBC /* Pods-ABKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABKitTests/Pods-ABKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		53DC27A01C6DAED20040005E /* ABKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABKitSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */,
 				3DD4E6641C6DA9F30089473B /* SplitTest.swift */,
 				3DD4E6661C6DAA190089473B /* Version.swift */,
-				3DD4E6681C6DAA2F0089473B /* VersionRange.swift */,
+				3DBDD6741C6DBFA2007C5181 /* VersionWeight.swift */,
 			);
 			path = Codes;
 			sourceTree = "<group>";
@@ -293,9 +293,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD4E6671C6DAA190089473B /* Version.swift in Sources */,
-				3DD4E6691C6DAA2F0089473B /* VersionRange.swift in Sources */,
 				3DD4E6651C6DA9F30089473B /* SplitTest.swift in Sources */,
 				3DD4E66D1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift in Sources */,
+				3DBDD6751C6DBFA2007C5181 /* VersionWeight.swift in Sources */,
 				3DD4E66B1C6DAD410089473B /* RandomNumberRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
