@@ -19,18 +19,15 @@ class ABKitSpec: QuickSpec {
             it("create SplitTest by convinience") {
                 let defaultVersion = Version(name: "name", behavior: {})
                 let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion)
-                expect(splitTest.versions.count).to(equal(1))
-                expect(splitTest.versions.first).toNot(beNil())
-                expect(splitTest.versions.first!.name).to(equal(defaultVersion.name))
+                expect(splitTest.versionWeights).to(beEmpty())
             }
             
             it("create SplitTest") {
                 let randomNumberRepository = TestRandomNumberRepository()
                 let defaultVersion = Version(name: "name", behavior: {})
                 let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion, randomNumberRepository: randomNumberRepository)
-                expect(splitTest.versions.count).to(equal(1))
-                expect(splitTest.versions.first).toNot(beNil())
-                expect(splitTest.versions.first!.name).to(equal(defaultVersion.name))
+                ex
+                pect(splitTest.versionWeights).to(beEmpty())
             }
         }
     }
