@@ -1,5 +1,7 @@
 # ABKit
 
+![Build Status](https://www.bitrise.io/app/6dbad8f8a5cf175f.svg?token=XbnTW4n4ZLo01_00ePqSbw)
+
 Split Testing for Swift.
 
 ABKit is a library for implementing a simple Split Test that:
@@ -27,7 +29,7 @@ $ pod install
 
 ## A/B Test
 
-```
+```swift
 let defaultVersion = Version(name: "a") { print("Pattern A") }
 
 let test = SplitTest(defaultVersion: defaultVersion)
@@ -40,7 +42,7 @@ test.run() // A(Default Version) = 50%, B = 50%
 
 ## Split Test with Weighted Probabilities
 
-```
+```swift
 let defaultVersion = Version(name: "a") { print("Pattern A") }
 
 let test = SplitTest(defaultVersion: defaultVersion)
