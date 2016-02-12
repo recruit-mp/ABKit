@@ -1,0 +1,22 @@
+PODS:
+  - ABKit (0.1.0)
+  - DOFavoriteButton (0.0.4)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+
+DEPENDENCIES:
+  - ABKit (from `../`)
+  - DOFavoriteButton
+  - SDWebImage (~> 3.6)
+
+EXTERNAL SOURCES:
+  ABKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ABKit: 0e239bd8adc0e1657e75c3c9d71cb2359eaed252
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+
+COCOAPODS: 0.39.0

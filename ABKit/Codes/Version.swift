@@ -6,7 +6,7 @@
 //  Copyright © 2016 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
 
-struct Version {
+public struct Version {
     let name: String
     let behavior: () -> Void
     

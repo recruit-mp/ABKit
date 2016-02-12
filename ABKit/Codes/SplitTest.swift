@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SplitTest {
+public class SplitTest {
     var versions: [Version] = []
     
     private let name: String
