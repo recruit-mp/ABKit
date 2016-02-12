@@ -14,6 +14,8 @@
 		3DD4E6671C6DAA190089473B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E6661C6DAA190089473B /* Version.swift */; };
 		3DD4E6691C6DAA2F0089473B /* VersionRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E6681C6DAA2F0089473B /* VersionRange.swift */; };
 		53DC27A11C6DAED20040005E /* ABKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC27A01C6DAED20040005E /* ABKitSpec.swift */; };
+		3DD4E66B1C6DAD410089473B /* RandomNumberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */; };
+		3DD4E66D1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E66C1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		3DD4E6681C6DAA2F0089473B /* VersionRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionRange.swift; sourceTree = "<group>"; };
 		4BFA0C4A40C2D2B016305DBC /* Pods-ABKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABKitTests/Pods-ABKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		53DC27A01C6DAED20040005E /* ABKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABKitSpec.swift; sourceTree = "<group>"; };
+		3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNumberRepository.swift; sourceTree = "<group>"; };
+		3DD4E66C1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+RandomNumberRepository.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		3DD4E6631C6DA9F30089473B /* Codes */ = {
 			isa = PBXGroup;
 			children = (
+				3DD4E66C1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift */,
+				3DD4E66A1C6DAD410089473B /* RandomNumberRepository.swift */,
 				3DD4E6641C6DA9F30089473B /* SplitTest.swift */,
 				3DD4E6661C6DAA190089473B /* Version.swift */,
 				3DD4E6681C6DAA2F0089473B /* VersionRange.swift */,
@@ -289,6 +295,8 @@
 				3DD4E6671C6DAA190089473B /* Version.swift in Sources */,
 				3DD4E6691C6DAA2F0089473B /* VersionRange.swift in Sources */,
 				3DD4E6651C6DA9F30089473B /* SplitTest.swift in Sources */,
+				3DD4E66D1C6DAE4A0089473B /* NSUserDefaults+RandomNumberRepository.swift in Sources */,
+				3DD4E66B1C6DAD410089473B /* RandomNumberRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
