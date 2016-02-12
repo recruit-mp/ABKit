@@ -41,7 +41,7 @@ class SplitTest {
     
     private func assertExcessWeight() {
         let totalWeight = versionWeights.reduce(0) { $0 + $1.weight }
-        assert(totalWeight > 100, "Total weight (\(totalWeight / 100)) must be below 1.0")
+        assert(totalWeight <= 100, "Total weight (\(totalWeight / 100)) must be below 1.0")
     }
     
     private func calculateWeightRanges() {
