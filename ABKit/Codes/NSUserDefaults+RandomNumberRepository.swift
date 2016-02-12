@@ -7,7 +7,7 @@
 //
 
 extension NSUserDefaults: RandomNumberRepository {
-    func ab_getRandomNumberWithKey(key: String) -> Int {
+    public func ab_getRandomNumberWithKey(key: String) -> Int {
         var randomNumber = integerForKey(key)
         if randomNumber == 0 {
             randomNumber = generateRandomNumber()

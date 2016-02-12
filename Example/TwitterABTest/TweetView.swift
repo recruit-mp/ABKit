@@ -16,7 +16,7 @@ class TweetView: UITableViewCell {
             favBtn.setTitle("", forState: .Selected)
             
             let defaultVersion = Version(name: "star") { print("Pattern A") }
-            let test = SplitTest(defaultVersion: defaultVersion)
+            let test = SplitTest(name: "like", defaultVersion: defaultVersion)
             
             let b = Version(name: "heart") { print("Pattern B") }
             test.addVersion(b, weight: 0.5)

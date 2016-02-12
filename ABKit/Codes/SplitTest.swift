@@ -9,7 +9,7 @@
 import Foundation
 
 public class SplitTest {
-    var versions: [Version] = []
+    public var versions: [Version] = []
     
     private let name: String
     private let defaultVersion: Version
@@ -23,16 +23,16 @@ public class SplitTest {
         addVersion(defaultVersion)
     }
     
-    convenience init(name: String, defaultVersion: Version) {
+    public convenience init(name: String, defaultVersion: Version) {
         let defaultRepository = NSUserDefaults.standardUserDefaults()
         self.init(name: name, defaultVersion: defaultVersion, randomNumberRepository: defaultRepository)
     }
     
-    func addVersion(version: Version) {
+    public func addVersion(version: Version) {
         versions.append(version)
     }
     
-    func run() {
+    public func run() {
         let randomNumber = randomNumberRepository.ab_getRandomNumberWithKey("ABKit-\(name)")
         let versionRanges = buildVersionRanges()
         let version = selectVersionByNumber(randomNumber, versionRanges: versionRanges)

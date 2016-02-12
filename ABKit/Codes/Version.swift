@@ -10,7 +10,7 @@ public struct Version {
     let name: String
     let behavior: () -> Void
     
-    init(name: String, behavior: () -> Void) {
+    public init(name: String, behavior: () -> Void) {
         self.name = name
         self.behavior = behavior
     }
