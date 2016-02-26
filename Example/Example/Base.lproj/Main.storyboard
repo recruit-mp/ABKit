@@ -81,7 +81,7 @@
                     <connections>
                         <segue destination="9Id-19-SxG" kind="show" identifier="showImageCollectionView" id="YWs-d0-VLJ"/>
                         <segue destination="kZW-Kq-cMN" kind="show" identifier="showImageTableView" id="Jaq-qX-dVw"/>
-                        <segue destination="kZW-Kq-cMN" kind="show" id="ia4-zw-uh1"/>
+                        <segue destination="kZW-Kq-cMN" kind="show" identifier="showRightImageTableView" id="ia4-zw-uh1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqb-vj-56k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,6 +339,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jaq-qX-dVw"/>
+        <segue reference="ia4-zw-uh1"/>
     </inferredMetricsTieBreakers>
 </document>
