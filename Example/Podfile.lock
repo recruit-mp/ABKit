@@ -1,0 +1,14 @@
+PODS:
+  - ABKit (0.1.0)
+
+DEPENDENCIES:
+  - ABKit (from `../`)
+
+EXTERNAL SOURCES:
+  ABKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ABKit: 0e239bd8adc0e1657e75c3c9d71cb2359eaed252
+
+COCOAPODS: 0.39.0
