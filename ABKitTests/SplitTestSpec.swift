@@ -19,14 +19,14 @@ class SplitTestSpec: QuickSpec {
             context("Initialization") {
                 
                 it("creates by convinience") {
-                    let defaultVersion = Version(name: "name", behavior: {})
+                    let defaultVersion = Version(name: "name", behavior: { _ in })
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion)
                     expect(splitTest.versionWeights).to(beEmpty())
                 }
                 
                 it("creates by specified the RandomNumberRepository") {
                     let randomNumberRepository = TestRandomNumberRepository()
-                    let defaultVersion = Version(name: "name", behavior: {})
+                    let defaultVersion = Version(name: "name", behavior: { _ in })
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion, randomNumberRepository: randomNumberRepository)
                     expect(splitTest.versionWeights).to(beEmpty())
                 }
@@ -35,9 +35,9 @@ class SplitTestSpec: QuickSpec {
             context("Add Version") {
                 
                 it("creates version weights") {
-                    let defaultVersion = Version(name: "name", behavior: {})
-                    let version1 = Version(name: "version1", behavior: {})
-                    let version2 = Version(name: "version2", behavior: {})
+                    let defaultVersion = Version(name: "name", behavior: { _ in })
+                    let version1 = Version(name: "version1", behavior: { _ in })
+                    let version2 = Version(name: "version2", behavior: { _ in })
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion)
                     splitTest.addVersion(version1, weight: 0.2)
                     splitTest.addVersion(version2, weight: 0.4)
@@ -54,9 +54,9 @@ class SplitTestSpec: QuickSpec {
             context("Run") {
                 
                 it("calcurates version weights") {
-                    let defaultVersion = Version(name: "name", behavior: {})
-                    let version1 = Version(name: "version1", behavior: {})
-                    let version2 = Version(name: "version2", behavior: {})
+                    let defaultVersion = Version(name: "name", behavior: { _ in })
+                    let version1 = Version(name: "version1", behavior: { _ in })
+                    let version2 = Version(name: "version2", behavior: { _ in })
                     let splitTest = SplitTest(name: "name", defaultVersion: defaultVersion)
                     splitTest.addVersion(version1, weight: 0.2)
                     splitTest.addVersion(version2, weight: 0.4)

@@ -6,11 +6,11 @@
 //  Copyright © 2016 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
 
-struct Version {
-    let name: String
-    let behavior: () -> Void
+public class Version {
+    public let name: String
+    let behavior: Version -> Void
     
-    init(name: String, behavior: () -> Void) {
+    public init(name: String, behavior: Version -> Void) {
         self.name = name
         self.behavior = behavior
     }

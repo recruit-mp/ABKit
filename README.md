@@ -30,11 +30,10 @@ $ pod install
 ## A/B Test
 
 ```swift
-let defaultVersion = Version(name: "a") { print("Pattern A") }
-
+let defaultVersion = Version(name: "A") { version in print("Pattern \(version.name)") }
 let test = SplitTest(name: "Sample A/B test", defaultVersion: defaultVersion)
 
-let b = Version(name: "b") { print("Pattern B") }
+let b = Version(name: "B") { version in print("Pattern \(version.name)") }
 test.addVersion(b, weight: 0.5)
 
 test.run() // A(Default Version) = 50%, B = 50%
@@ -43,18 +42,34 @@ test.run() // A(Default Version) = 50%, B = 50%
 ## Split Test with Weighted Probabilities
 
 ```swift
-let defaultVersion = Version(name: "a") { print("Pattern A") }
-
+let defaultVersion = Version(name: "A") { version in print("Pattern \(version.name)") }
 let test = SplitTest(name: "Sample split test", defaultVersion: defaultVersion)
 
-let b = Version(name: "b") { print("Pattern B") }
+let b = Version(name: "B") { version in print("Pattern \(version.name)") }
 test.addVersion(b, weight: 0.2)
 
-let c = Version(name: "c") { print("Pattern C") }
+let c = Version(name: "C") { version in print("Pattern \(version.name)") }
 test.addVersion(c, weight: 0.3)
 
 test.run() // A(Default Version) = 50%, B = 20%, C = 30%
 ```
+
+## Conditional Test
+
+```swift
+let defaultVersion = Version(name: "A") { version in print("Pattern \(version.name)") }
+let test = ConditionalTest<User>(name: "Sample conditional test", defaultVersion: defaultVersion)
+
+let b = Version(name: "B") { version in print("Pattern \(version.name)" }
+test.addVersion(b) { user in user.age < 20 }
+
+let user = User(name: "naoty", age: 28)
+test.run(user) // If user.age < 20 is true, B will be run otherwise A will be run.
+```
+
+## Pro Tips
+* `ABKit` selects one of the versions using a random number, which is saved in `RandomNumberRepository`. By default, `ABKit` uses `NSUserDefault` as `RandomNumberRepository`. You can save it in any storage by implementing `RandomNumberRepository` protocol.
+*  You can specify an arbitrary number as the random number using `-setRandomNumber(_:)` and reset a random number using `-deleteRandomNumber()` for `SplitTest`.
 
 ## License
 

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
 
-struct VersionWeight {
+class VersionWeight {
     let version: Version
     let weight: Int
     var weightRange: Range<Int> = 0..<100

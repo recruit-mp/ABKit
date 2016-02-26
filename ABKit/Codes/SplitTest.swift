@@ -8,35 +8,43 @@
 
 import Foundation
 
-class SplitTest {
+public class SplitTest {
     var versionWeights: [VersionWeight] = []
     
     private let name: String
     private let defaultVersion: Version
     private let randomNumberRepository: RandomNumberRepository
     
-    init(name: String, defaultVersion: Version, randomNumberRepository: RandomNumberRepository) {
+    public init(name: String, defaultVersion: Version, randomNumberRepository: RandomNumberRepository) {
         self.name = name
         self.defaultVersion = defaultVersion
         self.randomNumberRepository = randomNumberRepository
     }
     
-    convenience init(name: String, defaultVersion: Version) {
+    public convenience init(name: String, defaultVersion: Version) {
         let defaultRepository = NSUserDefaults.standardUserDefaults()
         self.init(name: name, defaultVersion: defaultVersion, randomNumberRepository: defaultRepository)
     }
     
-    func addVersion(version: Version, weight: Float) {
+    public func addVersion(version: Version, weight: Float) {
         let versionWeight = VersionWeight(version: version, weight: Int(weight * 100))
         versionWeights.append(versionWeight)
     }
     
-    func run() {
+    public func run() {
         assertExcessWeight()
         calculateWeightRanges()
         let randomNumber = randomNumberRepository.ab_getRandomNumberWithKey("ABKit-\(name)")
         let version = selectVersionByRandomNumber(randomNumber)
-        version.behavior()
+        version.behavior(version)
+    }
+    
+    public func setRandomNumber(randomNumber: Int) {
+        randomNumberRepository.ab_setRandomNumber(randomNumber, key: "ABKit-\(name)")
+    }
+    
+    public func deleteRandomNumber() {
+        randomNumberRepository.ab_deleteRandomNumberWithKey("ABKit-\(name)")
     }
     
     private func assertExcessWeight() {
