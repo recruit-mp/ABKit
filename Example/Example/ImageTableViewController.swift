@@ -9,7 +9,12 @@
 import UIKit
 
 class ImageTableViewController: UITableViewController {
+    enum CellType: String {
+        case Left, Right
+    }
+
     private var imageNames: [String]?
+    var cellType = CellType.Left
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +42,7 @@ class ImageTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LeftImageCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellType.rawValue, forIndexPath: indexPath)
 
         if let imageCell = cell as? ImageTableViewCell, let imageName = imageNames?[indexPath.row] {
             imageCell.imageName = imageName
