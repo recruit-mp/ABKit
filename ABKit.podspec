@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/recruit-mp/ABKit"
   s.license          = "MIT"
   s.author           = { "Naoto Kaneko" => "n_kaneko@r.recruit.co.jp" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/ABKit.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/recruit-mp/ABKit.git", :tag => s.version.to_s }
   s.platform         = :ios, "8.0"
   s.requires_arc     = true
   s.source_files     = "ABKit/**/*.{h,swift}"
