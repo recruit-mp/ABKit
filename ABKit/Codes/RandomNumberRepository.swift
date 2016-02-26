@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RandomNumberRepository {
+public protocol RandomNumberRepository {
     func ab_getRandomNumberWithKey(key: String) -> Int
     func ab_setRandomNumber(randomNumber: Int, key: String)
     func ab_deleteRandomNumberWithKey(key: String)
