@@ -39,6 +39,14 @@ public class SplitTest {
         version.behavior(version)
     }
     
+    public func setRandomNumber(randomNumber: Int) {
+        randomNumberRepository.ab_setRandomNumber(randomNumber, key: "ABKit-\(name)")
+    }
+    
+    public func deleteRandomNumber() {
+        randomNumberRepository.ab_deleteRandomNumberWithKey("ABKit-\(name)")
+    }
+    
     private func assertExcessWeight() {
         let totalWeight = versionWeights.reduce(0) { $0 + $1.weight }
         assert(totalWeight <= 100, "Total weight (\(totalWeight / 100)) must be below 1.0")
