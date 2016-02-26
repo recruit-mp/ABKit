@@ -3,7 +3,9 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "AB testing framework for iOS"
   s.description      = <<-DESC
-                       AB testing framework for iOS
+                       ABKit is a library for implementing a simple Split Test that:
+                       * Doesn't require an HTTP client
+                       * written in Pure Swift
                        DESC
   s.homepage         = "https://github.com/recruit-mp/ABKit"
   s.license          = "MIT"
