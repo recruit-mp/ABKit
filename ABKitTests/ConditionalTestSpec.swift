@@ -21,10 +21,10 @@ class ConditionalTestSpec: QuickSpec {
                 
                 context("When condition is age >= 20") {
                     it("runs the conditional version") {
-                        let defaultVersion = Version(name: "default") { expect(true).to(beFalse()) }
+                        let defaultVersion = Version(name: "default") { _ in expect(true).to(beFalse()) }
                         let test = ConditionalTest<User>(name: "sample", defaultVersion: defaultVersion)
                         
-                        let version = Version(name: "Test for adults") { expect(true).to(beTrue()) }
+                        let version = Version(name: "Test for adults") { _ in expect(true).to(beTrue()) }
                         test.addVersion(version) { user in user.age >= 20 }
                         test.run(self.user)
                     }
@@ -32,10 +32,10 @@ class ConditionalTestSpec: QuickSpec {
                 
                 context("When condition is age >= 30") {
                     it("runs the default version") {
-                        let defaultVersion = Version(name: "default") { expect(true).to(beTrue()) }
+                        let defaultVersion = Version(name: "default") { _ in expect(true).to(beTrue()) }
                         let test = ConditionalTest<User>(name: "sample", defaultVersion: defaultVersion)
                         
-                        let version = Version(name: "Test for adults") { expect(true).to(beFalse()) }
+                        let version = Version(name: "Test for adults") { _ in expect(true).to(beFalse()) }
                         test.addVersion(version) { user in user.age >= 30 }
                         test.run(self.user)
                     }

@@ -36,7 +36,7 @@ class SplitTest {
         calculateWeightRanges()
         let randomNumber = randomNumberRepository.ab_getRandomNumberWithKey("ABKit-\(name)")
         let version = selectVersionByRandomNumber(randomNumber)
-        version.behavior()
+        version.behavior(version)
     }
     
     private func assertExcessWeight() {

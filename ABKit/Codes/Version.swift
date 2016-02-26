@@ -7,10 +7,10 @@
 //
 
 public class Version {
-    let name: String
-    let behavior: () -> Void
+    public let name: String
+    let behavior: Version -> Void
     
-    init(name: String, behavior: () -> Void) {
+    init(name: String, behavior: Version -> Void) {
         self.name = name
         self.behavior = behavior
     }

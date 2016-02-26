@@ -26,14 +26,14 @@ public class ConditionalTest<T> {
         var isRun = false
         for version in versions {
             if version.condition(value) {
-                version.behavior()
+                version.behavior(version)
                 isRun = true
                 break
             }
         }
         
         if !isRun {
-            defaultVersion.behavior()
+            defaultVersion.behavior(defaultVersion)
         }
     }
 }

@@ -16,7 +16,7 @@ class VersionWeightSpec: QuickSpec {
         describe("VersionWeight") {
             
             it("check if contains number") {
-                let version = Version(name: "name", behavior: {})
+                let version = Version(name: "name", behavior: { _ in })
                 let versionWeight = VersionWeight(version: version, weight: 0)
                 expect(versionWeight.contains(99)).to(beTrue())
                 expect(versionWeight.contains(100)).to(beFalse())
