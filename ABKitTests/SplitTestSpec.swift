@@ -76,8 +76,13 @@ class SplitTestSpec: QuickSpec {
 }
 
 class TestRandomNumberRepository: RandomNumberRepository {
-    
     func ab_getRandomNumberWithKey(key: String) -> Int {
         return 1
+    }
+    
+    func ab_setRandomNumber(randomNumber: Int, key: String) {
+    }
+    
+    func ab_deleteRandomNumberWithKey(key: String) {
     }
 }
