@@ -15,4 +15,12 @@ extension NSUserDefaults: RandomNumberRepository {
         }
         return randomNumber
     }
+    
+    func ab_setRandomNumber(randomNumber: Int, key: String) {
+        setInteger(randomNumber, forKey: key)
+    }
+    
+    func ab_deleteRandomNumberWithKey(key: String) {
+        removeObjectForKey(key)
+    }
 }
