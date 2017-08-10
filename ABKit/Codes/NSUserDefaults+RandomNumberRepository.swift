@@ -6,21 +6,21 @@
 //  Copyright © 2016 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
 
-extension NSUserDefaults: RandomNumberRepository {
-    public func ab_getRandomNumberWithKey(key: String) -> Int {
-        var randomNumber = integerForKey(key)
+extension UserDefaults: RandomNumberRepository {
+    public func ab_getRandomNumberWithKey(_ key: String) -> Int {
+        var randomNumber = integer(forKey: key)
         if randomNumber == 0 {
             randomNumber = generateRandomNumber()
-            setInteger(randomNumber, forKey: key)
+            set(randomNumber, forKey: key)
         }
         return randomNumber
     }
     
-    public func ab_setRandomNumber(randomNumber: Int, key: String) {
-        setInteger(randomNumber, forKey: key)
+    public func ab_setRandomNumber(_ randomNumber: Int, key: String) {
+        set(randomNumber, forKey: key)
     }
     
-    public func ab_deleteRandomNumberWithKey(key: String) {
-        removeObjectForKey(key)
+    public func ab_deleteRandomNumberWithKey(_ key: String) {
+        removeObject(forKey: key)
     }
 }

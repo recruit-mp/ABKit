@@ -13,7 +13,7 @@ class ImageTableViewController: UITableViewController {
         case Left, Right
     }
 
-    private var imageNames: [String]?
+    fileprivate var imageNames: [String]?
     var cellType = CellType.Left
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class ImageTableViewController: UITableViewController {
         setupData()
     }
 
-    private func setupData() {
+    fileprivate func setupData() {
         // We prepared 16 images for example
         var imageNames = [String]()
         for i in 1...16 {
@@ -33,16 +33,16 @@ class ImageTableViewController: UITableViewController {
         self.imageNames = imageNames
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageNames?.count ?? 0
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellType.rawValue, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellType.rawValue, for: indexPath)
 
         if let imageCell = cell as? ImageTableViewCell, let imageName = imageNames?[indexPath.row] {
             imageCell.imageName = imageName
