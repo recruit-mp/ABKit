@@ -9,14 +9,14 @@
 class VersionWeight {
     let version: Version
     let weight: Int
-    var weightRange: Range<Int> = 0..<100
+    var weightRange: CountableRange<Int> = 0..<100
     
     init(version: Version, weight: Int) {
         self.version = version
         self.weight = weight
     }
     
-    func contains(number: Int) -> Bool {
+    func contains(_ number: Int) -> Bool {
         return weightRange.contains(number)
     }
 }

@@ -7,9 +7,9 @@
 //
 
 class ConditionalVersion<T>: Version {
-    let condition: T -> Bool
+    let condition: (T) -> Bool
     
-    init(name: String, behavior: Version -> Void, condition: T -> Bool) {
+    init(name: String, behavior: @escaping (Version) -> Void, condition: @escaping (T) -> Bool) {
         self.condition = condition
         super.init(name: name, behavior: behavior)
     }

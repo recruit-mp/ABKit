@@ -10,7 +10,7 @@ import UIKit
 import ABKit
 
 class RootViewController: UITableViewController {
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
             runABTest()
@@ -22,8 +22,8 @@ class RootViewController: UITableViewController {
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.destinationViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.destination {
         case let viewController as ImageTableViewController:
             if segue.identifier == "showRightImageTableView" {
                 viewController.cellType = .Right
@@ -34,7 +34,7 @@ class RootViewController: UITableViewController {
         }
     }
 
-    private func runABTest() {
+    fileprivate func runABTest() {
         let defaultVersion = Version(name: "A") { version in
             print("Pattern \(version.name)")
             self.performSegueWithIdentifier("showImageTableView", sender: self)
@@ -51,7 +51,7 @@ class RootViewController: UITableViewController {
         test.run()
     }
 
-    private func runWeightedProbabilitiesSplitTest() {
+    fileprivate func runWeightedProbabilitiesSplitTest() {
         let defaultVersion = Version(name: "A") { version in
             print("Pattern \(version.name)")
             self.performSegueWithIdentifier("showImageTableView", sender: self)
@@ -74,7 +74,7 @@ class RootViewController: UITableViewController {
         test.run()
     }
 
-    private func runConditionalTest() {
+    fileprivate func runConditionalTest() {
         let defaultVersion = Version(name: "A") {
             version in print("Pattern \(version.name)")
             self.performSegueWithIdentifier("showImageTableView", sender: self)
