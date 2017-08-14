@@ -59,7 +59,7 @@ open class SplitTest {
             let max = weightIndex + versionWeight.weight
             versionWeights[index].weightRange = min..<max
             
-            weightIndex = versionWeight.weight
+            weightIndex += versionWeight.weight
         }
     }
     
