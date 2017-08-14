@@ -4,4 +4,6 @@ use_frameworks!
 
 platform :ios, '9.2'
 
-pod 'ABKit', path: '../'
+target "Example" do 
+	pod 'ABKit', :path => '../'
+end
