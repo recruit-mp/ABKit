@@ -37,16 +37,17 @@ class RootViewController: UITableViewController {
     fileprivate func runABTest() {
         let defaultVersion = Version(name: "A") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageTableView", sender: self)
+            self.performSegue(withIdentifier: "showImageTableView", sender: self)
         }
 
         let test = SplitTest(name: "Sample A/B test", defaultVersion: defaultVersion)
 
         let b = Version(name: "B") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageCollectionView", sender: self)
+            self.performSegue(withIdentifier: "showImageCollectionView", sender: self)
         }
         test.addVersion(b, weight: 0.5)
+        test.deleteRandomNumber()
 
         test.run()
     }
@@ -54,22 +55,30 @@ class RootViewController: UITableViewController {
     fileprivate func runWeightedProbabilitiesSplitTest() {
         let defaultVersion = Version(name: "A") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageTableView", sender: self)
+            // self.performSegue(withIdentifier: "showImageTableView", sender: self)
         }
 
         let test = SplitTest(name: "Sample Split test", defaultVersion: defaultVersion)
 
         let b = Version(name: "B") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageCollectionView", sender: self)
+            // self.performSegue(withIdentifier: "showImageCollectionView", sender: self)
         }
         test.addVersion(b, weight: 0.2)
 
         let c = Version(name: "C") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showRightImageTableView", sender: self)
+            // self.performSegue(withIdentifier: "showRightImageTableView", sender: self)
         }
-        test.addVersion(c, weight: 0.3)
+
+        let d = Version(name: "D") { version in
+            print("Pattern \(version.name)")
+            // self.performSegue(withIdentifier: "showRightImageTableView", sender: self)
+        }
+
+        test.addVersion(c, weight: 0.2)
+        test.addVersion(d, weight: 0.2)
+        test.deleteRandomNumber()
 
         test.run()
     }
@@ -77,14 +86,14 @@ class RootViewController: UITableViewController {
     fileprivate func runConditionalTest() {
         let defaultVersion = Version(name: "A") {
             version in print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageTableView", sender: self)
+            self.performSegue(withIdentifier: "showImageTableView", sender: self)
         }
 
         let test = ConditionalTest<Int>(name: "Sample conditional test", defaultVersion: defaultVersion)
 
         let b = Version(name: "B") { version in
             print("Pattern \(version.name)")
-            self.performSegueWithIdentifier("showImageCollectionView", sender: self)
+            self.performSegue(withIdentifier: "showImageCollectionView", sender: self)
         }
         test.addVersion(b) { age in age < 20 }
 
