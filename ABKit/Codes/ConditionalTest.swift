@@ -6,23 +6,23 @@
 //  Copyright © 2016 Recruit Marketing Partners Co.,Ltd. All rights reserved.
 //
 
-public class ConditionalTest<T> {
-    public let name: String
-    public let defaultVersion: Version
+open class ConditionalTest<T> {
+    open let name: String
+    open let defaultVersion: Version
     
-    private var versions: [ConditionalVersion<T>] = []
+    fileprivate var versions: [ConditionalVersion<T>] = []
     
     public init(name: String, defaultVersion: Version) {
         self.name = name
         self.defaultVersion = defaultVersion
     }
     
-    public func addVersion(version: Version, condition: (T) -> Bool) {
+    open func addVersion(_ version: Version, condition: @escaping (T) -> Bool) {
         let conditionalVersion = ConditionalVersion(name: version.name, behavior: version.behavior, condition: condition)
         versions.append(conditionalVersion)
     }
     
-    public func run(value: T) {
+    open func run(_ value: T) {
         var isRun = false
         for version in versions {
             if version.condition(value) {
