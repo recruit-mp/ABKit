@@ -9,9 +9,9 @@
 import Foundation
 
 public protocol RandomNumberRepository {
-    func ab_getRandomNumberWithKey(key: String) -> Int
-    func ab_setRandomNumber(randomNumber: Int, key: String)
-    func ab_deleteRandomNumberWithKey(key: String)
+    func ab_getRandomNumberWithKey(_ key: String) -> Int
+    func ab_setRandomNumber(_ randomNumber: Int, key: String)
+    func ab_deleteRandomNumberWithKey(_ key: String)
 }
 
 extension RandomNumberRepository {

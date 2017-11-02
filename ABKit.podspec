@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ABKit"
-  s.version          = "0.1.0"
+f s.version          = "0.2.0"
   s.summary          = "AB testing framework for iOS"
   s.description      = <<-DESC
                        ABKit is a library for implementing a simple Split Test that:
