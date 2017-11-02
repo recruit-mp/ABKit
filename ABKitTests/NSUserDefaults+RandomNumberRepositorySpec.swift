@@ -16,7 +16,7 @@ class NSUserDefaultsRandomNumberRepositorySpec: QuickSpec {
         describe("NSUserDefaults+RandomNumberRepository") {
             
             it("ab_getRandomNumberWithKey") {
-                let defaults = NSUserDefaults.standardUserDefaults()
+                let defaults = UserDefaults.standard
                 let random = defaults.ab_getRandomNumberWithKey("test")
                 expect(random).to(beGreaterThanOrEqualTo(0))
                 expect(random).to(beLessThanOrEqualTo(100))
